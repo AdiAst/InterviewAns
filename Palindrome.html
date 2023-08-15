@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palindrome</title>
+</head>
+
+<body>
+    <script>
+        function palindrome(kata) {
+            let arrKata = kata.toLowerCase().split(/\s*/)
+            let max = arrKata.length-1
+            for(let i =0 ; i <=arrKata.length-1/2 ; i++){
+                if(arrKata[i] != arrKata[max]){
+                    return false
+                }
+                max--
+            }
+            return true
+            
+        }
+        function pal(kata){
+            if(kata.length === 1){
+                return true
+            }else{
+                if(kata[0]==kata[kata.length-1]){
+                    kata.slice(1)
+                    kata.slice(kata.length)
+                    return pal(kata.slice(1,-1))
+                }else{
+                    return false
+                    
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>
